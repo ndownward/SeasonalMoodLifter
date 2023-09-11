@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 import Home from './components/screens/Home';
 import Recommendations from './components/screens/Recommendations';
 import Profile from './components/screens/Profile';
+
+const image = require('./images/cupcake.png');
 
 interface TabProps {
   label: string;
@@ -17,7 +19,22 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={Home} 
+        options={{
+          title: 'My profile',
+          tabBarIcon: ({size,focused,color}) => {
+            return (
+              <Image
+                style={{ width: size, height: size }}
+                source={image}
+                // source={{
+                //   uri:'./images/cupcake.JPG',
+                // }}
+              />
+            );
+          },
+        }}
+        />
         <Tab.Screen name="Favorites" component={Recommendations} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>

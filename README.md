@@ -1,3 +1,23 @@
+Get the app up and running:
+npm start
+npm run android
+
+done:
+- wireframing
+- set up environment
+- set up git repo
+- add dynamic bottom nav bar
+- add multiple pages
+
+todo:
+- change navbar icons
+- set up aws server
+
+
+
+
+
+Automatic README content ----------
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
