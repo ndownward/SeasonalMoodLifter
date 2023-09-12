@@ -8,10 +8,14 @@ done:
 - set up git repo
 - add dynamic bottom nav bar
 - add multiple pages
+- change navbar icons
 
 todo:
-- change navbar icons
 - set up aws server
+- create landing page that leads to navigation screen
+
+ncie to have:
+- icons fully light up on select, not just label text
 
 
 
