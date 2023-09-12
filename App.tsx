@@ -6,7 +6,9 @@ import Home from './components/screens/Home';
 import Recommendations from './components/screens/Recommendations';
 import Profile from './components/screens/Profile';
 
-const image = require('./images/cupcake.png');
+const homeImage = require('./images/Home.png');
+const heartImage = require('./images/heart.png');
+const profileImage = require('./images/profile.png');
 
 interface TabProps {
   label: string;
@@ -20,22 +22,45 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} 
         options={{
-          title: 'My profile',
+          title: 'Home',
           tabBarIcon: ({size,focused,color}) => {
             return (
               <Image
                 style={{ width: size, height: size }}
-                source={image}
-                // source={{
-                //   uri:'./images/cupcake.JPG',
-                // }}
+                source={homeImage}
               />
             );
           },
         }}
         />
-        <Tab.Screen name="Favorites" component={Recommendations} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Recommendations" component={Recommendations} 
+        options={{
+          title: 'Recommendations',
+          tabBarIcon: ({size,focused,color}) => {
+            return (
+              <Image
+                style={{ width: size, height: size }}
+                source={heartImage}
+              />
+            );
+          },
+        }}
+        />
+        <Tab.Screen name="Profile" component={Profile} 
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({size,focused,color}) => {
+            return (
+              <Image
+                style={{ width: size, height: size }}
+                source={profileImage}
+              />
+            );
+          },
+        }}
+        />
+        {/* <Tab.Screen name="Recommendations" component={Recommendations} />
+        <Tab.Screen name="Profile" component={Profile} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
