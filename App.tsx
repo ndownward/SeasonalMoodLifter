@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'rea
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import NavigationScreen from './screens/Navigation';
+import LandingScreen from './screens/Landing';
 
 const homeImage = require('./images/Home.png');
 const heartImage = require('./images/heart.png');
@@ -12,7 +13,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationScreen />
+    <LandingScreen />
   );
 }
 
