@@ -9,10 +9,13 @@ done:
 - add dynamic bottom nav bar
 - add multiple pages
 - change navbar icons
+- creating landing page
+- landing page navigation to navbar page
 
 todo:
 - set up aws server
-- create landing page that leads to navigation screen
+- user profile creation
+- user profile authentication
 
 ncie to have:
 - icons fully light up on select, not just label text
