@@ -15,7 +15,6 @@ const Tab = createBottomTabNavigator();
 
 export default function NavigationScreen() {
   return (
-    <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} 
         options={{
@@ -59,7 +58,6 @@ export default function NavigationScreen() {
         {/* <Tab.Screen name="Recommendations" component={Recommendations} />
         <Tab.Screen name="Profile" component={Profile} /> */}
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }
 

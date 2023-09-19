@@ -4,16 +4,29 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import NavigationScreen from './screens/Navigation';
 import LandingScreen from './screens/Landing';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const homeImage = require('./images/Home.png');
 const heartImage = require('./images/heart.png');
 const profileImage = require('./images/profile.png');
 
+export type RootStackParams = {
+  Landing: any;
+  Navigation: any;
+};
+
 const Tab = createBottomTabNavigator();
+const RootStack = createNativeStackNavigator<RootStackParams>();
 
 export default function App() {
   return (
-    <LandingScreen />
+    <NavigationContainer>
+      <RootStack.Navigator initialRouteName='Landing'>
+        <RootStack.Screen name="Landing" component={LandingScreen} options={{headerShown: false}} />
+        <RootStack.Screen name="Navigation" component={NavigationScreen} options={{headerShown: false}}/>
+      </RootStack.Navigator>
+    </NavigationContainer>
   );
 }
 
