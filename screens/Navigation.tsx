@@ -13,7 +13,7 @@ const profileImage = require('../images/profile.png');
 
 const Tab = createBottomTabNavigator();
 
-export default function NavigationScreen() {
+const NavigationScreen = () => {
   return (
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} 
@@ -71,3 +71,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default NavigationScreen;
