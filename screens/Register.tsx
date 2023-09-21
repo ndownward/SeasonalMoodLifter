@@ -1,28 +1,25 @@
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { RootStackParams } from '../App';
 
-const LandingScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  
+const RegisterScreen = () => {
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+    
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    // You can add your authentication logic here
-    // console.log(`Username: ${username}, Password: ${password}`);
-    navigation.navigate('Navigation');
-  };
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleRegister = () => {
-    navigation.navigate('Register');
-  }
+    // Add your registration logic here
+    navigation.navigate('Landing');
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Register</Text>
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -31,20 +28,25 @@ const LandingScreen = () => {
       />
       <TextInput
         style={styles.input}
+        placeholder="Email"
+        onChangeText={(text) => setEmail(text)}
+        value={email}
+      />
+      <TextInput
+        style={styles.input}
         placeholder="Password"
         onChangeText={(text) => setPassword(text)}
         value={password}
         secureTextEntry
       />
-      <View>
-      <TouchableOpacity onPress={() => {navigation.navigate("ResetPassword")}}>
-        <Text style={styles.forgotPassword}>Forgot Password?</Text>
-      </TouchableOpacity>
-      </View>
+      <TextInput
+        style={styles.input}
+        placeholder="Confirm Password"
+        onChangeText={(text) => setConfirmPassword(text)}
+        value={confirmPassword}
+        secureTextEntry
+      />
       <View style={styles.buttonContainer}>
-        <View style={styles.buttonWrapper}>
-          <Button title="Login" onPress={handleLogin} />
-        </View>
         <View style={styles.buttonWrapper}>
           <Button title="Register" onPress={handleRegister} />
         </View>
@@ -74,17 +76,12 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '50%',
+    width: '80%',
   },
   buttonWrapper: {
     flex: 1,
-    marginHorizontal: 5,
+    marginHorizontal: 5, // Add margin between the buttons
   },
-  forgotPassword: {
-    color: 'blue', // You can customize the link color
-    textDecorationLine: 'underline',
-    marginTop: 10,
-  }
 });
 
-export default LandingScreen;
+export default RegisterScreen;

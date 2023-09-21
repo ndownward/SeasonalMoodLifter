@@ -6,6 +6,8 @@ import NavigationScreen from './screens/Navigation';
 import LandingScreen from './screens/Landing';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RegisterScreen from './screens/Register';
+import ResetPasswordScreen from './screens/ResetPassword';
 
 const homeImage = require('./images/Home.png');
 const heartImage = require('./images/heart.png');
@@ -14,6 +16,8 @@ const profileImage = require('./images/profile.png');
 export type RootStackParams = {
   Landing: any;
   Navigation: any;
+  Register: any;
+  ResetPassword: any;
 };
 
 const Tab = createBottomTabNavigator();
@@ -25,6 +29,8 @@ export default function App() {
       <RootStack.Navigator initialRouteName='Landing'>
         <RootStack.Screen name="Landing" component={LandingScreen} options={{headerShown: false}} />
         <RootStack.Screen name="Navigation" component={NavigationScreen} options={{headerShown: false}}/>
+        <RootStack.Screen name="Register" component={RegisterScreen} options={{headerShown: false}}/>
+        <RootStack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{headerShown: false}}/>
       </RootStack.Navigator>
     </NavigationContainer>
   );
