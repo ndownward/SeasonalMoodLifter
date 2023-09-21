@@ -36,11 +36,6 @@ const LandingScreen = () => {
         value={password}
         secureTextEntry
       />
-      <View>
-      <TouchableOpacity onPress={() => {navigation.navigate("ResetPassword")}}>
-        <Text style={styles.forgotPassword}>Forgot Password?</Text>
-      </TouchableOpacity>
-      </View>
       <View style={styles.buttonContainer}>
         <View style={styles.buttonWrapper}>
           <Button title="Login" onPress={handleLogin} />
@@ -48,6 +43,11 @@ const LandingScreen = () => {
         <View style={styles.buttonWrapper}>
           <Button title="Register" onPress={handleRegister} />
         </View>
+      </View>
+      <View>
+      <TouchableOpacity onPress={() => {navigation.navigate("ResetPassword")}}>
+        <Text style={styles.forgotPassword}>Forgot Password?</Text>
+      </TouchableOpacity>
       </View>
     </View>
   );
@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
   forgotPassword: {
     color: 'blue', // You can customize the link color
     textDecorationLine: 'underline',
-    marginTop: 10,
+    marginTop: 5,
+    marginBottom: 10,
   }
 });
 
