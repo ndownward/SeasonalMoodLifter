@@ -2,6 +2,10 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+// ???
+import { Amplify } from 'aws-amplify';
+import config from './src/aws-exports';
+
 import NavigationScreen from './screens/Navigation';
 import LandingScreen from './screens/Landing';
 import { NavigationContainer } from '@react-navigation/native';
@@ -19,6 +23,8 @@ export type RootStackParams = {
   Register: any;
   ResetPassword: any;
 };
+
+Amplify.configure(config);
 
 const Tab = createBottomTabNavigator();
 const RootStack = createNativeStackNavigator<RootStackParams>();
