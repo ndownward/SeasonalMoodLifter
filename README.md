@@ -11,11 +11,14 @@ done:
 - change navbar icons
 - creating landing page
 - landing page navigation to navbar page
-
-todo:
 - set up aws server
 - user profile creation
-- user profile authentication
+- user profile authentication - sept/30/2023
+
+todo:
+- see whats next on aws video - customize register page? or set up aws site to match
+- set up nav bar as navigation container
+- get rid of fools registration page
 
 ncie to have:
 - icons fully light up on select, not just label text
