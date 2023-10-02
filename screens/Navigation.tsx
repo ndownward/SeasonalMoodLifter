@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image, Pressable } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 import Home from '../components/navigation/Home';
 import Recommendations from '../components/navigation/Recommendations';
 import Profile from '../components/navigation/Profile';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParams } from '../App';
 
 const homeImage = require('../images/Home.png');
 const heartImage = require('../images/heart.png');
@@ -14,7 +16,11 @@ const profileImage = require('../images/profile.png');
 const Tab = createBottomTabNavigator();
 
 const NavigationScreen = () => {
+
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+
   return (
+    <>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} 
         options={{
@@ -55,9 +61,8 @@ const NavigationScreen = () => {
           },
         }}
         />
-        {/* <Tab.Screen name="Recommendations" component={Recommendations} />
-        <Tab.Screen name="Profile" component={Profile} /> */}
       </Tab.Navigator>
+    </>
   );
 }
 
