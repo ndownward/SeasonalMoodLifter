@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "moodLifterAPI",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authAuthentication",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

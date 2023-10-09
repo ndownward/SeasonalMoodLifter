@@ -1,6 +1,43 @@
+import { API, graphqlOperation } from "aws-amplify";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { listMoodLifters } from "../../src/graphql/queries";
+import { useEffect, useState } from "react";
+import { ListMoodLiftersQuery } from "../../src/API";
+import { GraphQLQuery } from '@aws-amplify/api';
+import * as queries from '../../src/graphql/queries';
+import awsmobile from "../../src/aws-exports";
 
 export default function Recommendations() {
+  console.log("in the log from Recommendationss.tsx!");
+  console.log("testinggggg!");
+
+  useEffect(() => {
+    fetchMoodLifters()
+  }, []);
+
+  const fetchMoodLifters = async() => {
+    console.log("before API call");
+    console.log("before API call");
+
+    try {
+      console.log("testingg!");
+      // const moodLifterData: any = await API.graphql(graphqlOperation(listMoodLifters));
+      const moodLiftersData = await API.graphql<GraphQLQuery<ListMoodLiftersQuery>>(
+        { query: queries.listMoodLifters });
+      const moodLifterList: any = moodLiftersData?.data?.listMoodLifters?.items;
+      console.log("moodLifterList: ", moodLifterList);
+      console.log("test");
+      setMoodLifters(moodLifterList);
+    }
+    catch (err) {
+      console.log("error on fetching moodLifters", err);
+      // return Promise.reject(err);
+    }
+
+  }
+  const [moodLifters, setMoodLifters] = useState([]);
+
+
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>

@@ -42,6 +42,7 @@ function SignOutButton() {
 }
 
 function App() {
+  console.log("in the log from App.tsx!");
   const [loading, setLoading] = useState(false);
 
   return (
