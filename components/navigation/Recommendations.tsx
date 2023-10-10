@@ -24,7 +24,8 @@ export default function Recommendations() {
       // const moodLifterData: any = await API.graphql(graphqlOperation(listMoodLifters));
       const moodLiftersData = await API.graphql<GraphQLQuery<ListMoodLiftersQuery>>(
         { query: queries.listMoodLifters });
-      const moodLifterList: any = moodLiftersData?.data?.listMoodLifters?.items;
+      const moodLifterList : any = moodLiftersData?.data?.listMoodLifters?.items;
+      console.log("moodLiftersData: ", moodLiftersData)
       console.log("moodLifterList: ", moodLifterList);
       console.log("test");
       setMoodLifters(moodLifterList);
