@@ -2,6 +2,10 @@ Get the app up and running:
 npm start
 npm run android
 
+username and pass:
+downward
+Testtest#1234
+
 done:
 - wireframing
 - set up environment
@@ -18,15 +22,14 @@ done:
 - get rid of fools registration page
 
 todo:
-- get console log of list of moodLifters - start printing out moodLiftersData, moodLiftersData.data...etc
-- issue: use cognito user pools as graphql authentication except amplify user creation doesnt add to cognito pools - google "auth graphql with cognito and amplify"
-- ok now everythings like good but issue: google "how to add amplify user group to cognito pool" cause the users are there and the config is there to authorize all cognito pools but i need to bring the amplify users to the cognito pool. how?
-
-
-- problem: graphql authentication with aws cognito
+- google "how to use existing dynamodb in react-native" for empty array being returned
+-> how to configure a mapping template - i never did this so maybe im missing files
+-> instead - don't use appsync and just connect directly to dynamodb now lol
 - set up dynamodb (new saved youtube video)
 - be able to input emotion, click button, retrive that emotion
 - UML diagram for data
+- run a gradle build to like sync up the gradle scripts "After adding the dependencies for the products you want to use, sync your Android project with Gradle files." in link below
+   - then follow https://firebase.google.com/docs/android/setup?authuser=0#groovy
 
 ncie to have:
 - icons fully light up on select, not just label text

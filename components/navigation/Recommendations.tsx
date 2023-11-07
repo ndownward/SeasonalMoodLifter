@@ -7,36 +7,51 @@ import { GraphQLQuery } from '@aws-amplify/api';
 import * as queries from '../../src/graphql/queries';
 import awsmobile from "../../src/aws-exports";
 
+import { AppRegistry } from 'react-native';
+// import { name as appName } from './app.json';
+// import { initializeApp } from '@react-native-firebase/app'
+
 export default function Recommendations() {
   console.log("in the log from Recommendationss.tsx!");
   console.log("testinggggg!");
 
-  useEffect(() => {
-    fetchMoodLifters()
-  }, []);
+  // const firebaseConfig = {
+  //   apiKey: 'YOUR_API_KEY',
+  //   authDomain: 'YOUR_AUTH_DOMAIN',
+  //   databaseURL: 'YOUR_DATABASE_URL',
+  //   projectId: 'YOUR_PROJECT_ID',
+  //   storageBucket: 'YOUR_STORAGE_BUCKET',
+  //   messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  //   appId: 'YOUR_APP_ID',
+  // };
+  
+  // initializeApp(firebaseConfig);
 
-  const fetchMoodLifters = async() => {
-    console.log("before API call");
-    console.log("before API call");
+  // const [moodLifters, setMoodLifters] = useState([]);
 
-    try {
-      console.log("testingg!");
-      // const moodLifterData: any = await API.graphql(graphqlOperation(listMoodLifters));
-      const moodLiftersData = await API.graphql<GraphQLQuery<ListMoodLiftersQuery>>(
-        { query: queries.listMoodLifters });
-      const moodLifterList : any = moodLiftersData?.data?.listMoodLifters?.items;
-      console.log("moodLiftersData: ", moodLiftersData)
-      console.log("moodLifterList: ", moodLifterList);
-      console.log("test");
-      setMoodLifters(moodLifterList);
-    }
-    catch (err) {
-      console.log("error on fetching moodLifters", err);
-      // return Promise.reject(err);
-    }
+  // useEffect(() => {
+  //   fetchMoodLifters()
+  // }, []);
 
-  }
-  const [moodLifters, setMoodLifters] = useState([]);
+  // const fetchMoodLifters = async() => {
+  //   console.log("before API call");
+  //   console.log("before API call");
+
+    // try {
+    //   console.log("testingg!");
+    //   // const moodLifterData: any = await API.graphql(graphqlOperation(listMoodLifters));
+    //   const moodLiftersData = await API.graphql<GraphQLQuery<ListMoodLiftersQuery>>(
+    //     { query: queries.listMoodLifters });
+    //   const moodLifterList : any = moodLiftersData?.data?.listMoodLifters?.items;
+    //   console.log("moodLiftersData.data ", moodLiftersData?.data);
+    //   console.log("moodLifterList: ", moodLifterList);
+    //   console.log("test");
+    //   setMoodLifters(moodLifterList);
+    // }
+    // catch (err) {
+    //   console.log("error on fetching moodLifters", err);
+    //   // return Promise.reject(err);
+    // }
 
 
   return (
